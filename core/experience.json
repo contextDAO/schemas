@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Work Experience",
+    "type": "object",
+    "properties": {
+        "roles": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Role"
+            }
+        }
+    },
+    "definitions": {
+      "Role": {
+        "type": "object",
+        "properties": {
+          "organization": {
+            "$ref": "ctx://core/organization"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "type": ["string", "null"],
+            "format": "date"
+          },
+          "position": {
+            "type": "string"
+          }
+        },
+        "required": ["organization", "startDate", "position"]
+      }
+    },
+    "required": ["roles"]
+}

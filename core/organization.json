@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "legalName": {
+        "type": "string"
+      },
+      "website": {
+        "type": "string"
+      },
+      "location": {
+        "type": "string"
+      },
+      "industry": {
+        "type": "string"
+      }
+    },
+    "required": [ "name" ]
+  }

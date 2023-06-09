@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "farmer": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "integer"
+          },
+          "date_start": {
+            "type": "string"
+          },
+          "date_end": {
+            "type": "string"
+          },
+          "trees_planted": {
+            "type": "integer"
+          },
+          "trees_species": {
+            "type": "string"
+          },
+          "measures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "tree_number": {
+                  "type": "integer"
+                },
+                "co2_sequestrated": {
+                  "type": "integer"
+                },
+                "tree_cover_percentage": {
+                  "type": "integer"
+                },
+                "tree_crown_area": {
+                  "type": "integer"
+                },
+                "proof": {
+                  "type": "string"
+                }
+              },
+              "required": ["date", "tree_number", "co2_sequestrated", "tree_cover_percentage", "tree_crown_area", "proof"]
+            }
+          },
+          "payments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "txId": {
+                  "type": "string"
+                },
+                "platform": {
+                  "type": "string"
+                }
+              },
+              "required": ["date", "txId", "platform"]
+            }
+          }
+        },
+        "required": ["size", "date_start", "date_end", "trees_planted", "trees_species", "measures", "payments"]
+      }
+    }
+  },
+  "required": ["farmer"]
+}
